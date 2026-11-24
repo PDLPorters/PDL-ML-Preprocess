@@ -9,7 +9,7 @@ use PDL::Core ();
 use PDL::Lite ();
 use PDL::Ufunc ();
 
-our $VERSION   = '0.01';
+our $VERSION   = '0.011';
 our @EXPORT_OK = qw(
     train_test_split
     standard_scale
@@ -119,6 +119,12 @@ PDL::ML::Preprocess - Machine learning preprocessing utilities for PDL ndarrays
 C<PDL::ML::Preprocess> provides common tabular and vector preprocessing
 functions (train/test splitting, standardization, min-max scaling, L2
 normalization, and one-hot encoding) operating directly on L<PDL> ndarrays.
+
+=head1 TYPES
+
+Operates on real numeric PDL ndarrays (promoted to floating-point C<float> or
+C<double> for scaling and normalization). Complex ndarrays are not supported
+for feature scaling or min-max normalization.
 
 =head1 AUTHOR
 
